@@ -6,6 +6,10 @@ export function Countdown(arg1) {
   return window['go']['main']['App']['Countdown'](arg1);
 }
 
+export function Notify(arg1, arg2) {
+  return window['go']['main']['App']['Notify'](arg1, arg2);
+}
+
 export function RemainingCountdown() {
   return window['go']['main']['App']['RemainingCountdown']();
 }
