@@ -1,7 +1,7 @@
 import './style.css';
 import './app.css';
  
-import {Countdown} from '../wailsjs/go/main/App';
+import {Countdown, StopCountdown} from '../wailsjs/go/main/App';
 import {EventsOn} from '../wailsjs/runtime';
 
 // Listen for the "countdown" event and update the UI
@@ -11,7 +11,7 @@ EventsOn("countdown", (remainingTime: string) => {
 
 function startCountdown() {
   const countdown = countdownInputElement.value;
-  console.log(countdown);
+  console.log(`Starting countdown for ${countdown} seconds`);
     // Check if the input is a number
     if (isNaN(Number(countdown))) {
         alert("Please enter a number");
@@ -19,7 +19,20 @@ function startCountdown() {
     }
 
     // Start the countdown
-  Countdown(countdown);
+    Countdown(countdown);
+
+    //  Change the button text to "Stop Countdown"
+    startButtonElement.textContent = "Stop";
+
+}
+
+// Function to stop the countdown
+function stopCountdown() {
+    console.log(`Stoppping countdown`);
+    // Stop the countdown
+    StopCountdown();
+    // Change the button text to "Start Countdown"
+    startButtonElement.textContent = "Start";
 }
 
 // Define the HTML content
@@ -30,7 +43,7 @@ const html = `
       <div class="countdown-label">Enter seconds:</div>
       <div class="input-box">
         <input class="input" id="countdown-input" type="text" autocomplete="off" />
-        <button class="btn" id="start-btn">Start Countdown</button>
+        <button class="btn" id="start-btn">Start</button>
       </div>
       <div class="countdown-label">Remaining time:</div>
       <div class="countdown" id="countdown-output">0</div>
@@ -46,6 +59,15 @@ const countdownInputElement = document.getElementById("countdown-input") as HTML
 const countdownResultElement = document.getElementById("countdown-output")!;
 const startButtonElement = document.getElementById("start-btn")!;
 
-// Add an event listener to the start button
-startButtonElement.addEventListener("click", startCountdown);
+// Add event listener to the button element to see if its clicke to start or stop the countdown
+startButtonElement.addEventListener("click", () => {
+    let buttonText = startButtonElement.textContent;
+    console.log(`Button Text = ${buttonText}`);
+    if (buttonText === "Start") {
+        startCountdown();
+    } else {
+        stopCountdown();
+    }
+});
+
 

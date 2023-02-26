@@ -3,6 +3,6 @@
 
 export function Countdown(arg1:string):Promise<void>;
 
-export function Greet(arg1:string):Promise<string>;
-
 export function RemainingCountdown():Promise<void>;
+
+export function StopCountdown():Promise<void>;

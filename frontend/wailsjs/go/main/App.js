@@ -6,10 +6,10 @@ export function Countdown(arg1) {
   return window['go']['main']['App']['Countdown'](arg1);
 }
 
-export function Greet(arg1) {
-  return window['go']['main']['App']['Greet'](arg1);
-}
-
 export function RemainingCountdown() {
   return window['go']['main']['App']['RemainingCountdown']();
+}
+
+export function StopCountdown() {
+  return window['go']['main']['App']['StopCountdown']();
 }
