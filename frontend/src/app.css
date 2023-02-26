@@ -1,0 +1,73 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0.3em; /* or any other value you prefer */
+}
+
+.heading {
+	font-size: 3rem;
+	margin-bottom: 2rem;
+}
+
+.countdown-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #ccc;
+	border-radius: 8px;
+	padding: 2rem;
+	width: 80%;
+	max-width: 500px;
+	margin-bottom: 0.3em;
+}
+
+.countdown-label {
+	font-size: 1.2rem;
+	margin-bottom: 0.5rem;
+}
+
+.input-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+
+.input {
+	padding: 0.5rem;
+	border-radius: 8px;
+	border: none;
+	margin-right: 0.5rem;
+	width: 60px;
+	text-align: center;
+}
+
+.btn {
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	border: none;
+	background-color: #007bff;
+	color: #fff;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: #0069d9;
+}
+
+.countdown {
+	font-size: 2.5rem;
+	font-weight: bold;
+}
